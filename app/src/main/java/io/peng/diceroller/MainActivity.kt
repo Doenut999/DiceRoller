@@ -17,14 +17,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-    private val valueRange = (1..6)
+    private val valueRange = (1..6) //sides of a die, range from 1 to 6
     private fun rollDice(){
-        val activeSide = valueRange.random()
-        binding.activeSide.text = activeSide.toString()
+        val activeSide = valueRange.random() //to pick a random side of a die
+        binding.activeSide.text = activeSide.toString() //setting the textView text value tp the random value we got
         if (activeSide==6) {
             Toast.makeText(this, "You  rolled a 6, yay!", Toast.LENGTH_SHORT).show()
         }
         when (activeSide) {
+            //to return a different dice image based on the value of activeSide
             1 -> binding.dice.setImageResource(R.drawable.roll_1)
             2 -> binding.dice.setImageResource(R.drawable.roll_2)
             3 -> binding.dice.setImageResource(R.drawable.roll_3)
